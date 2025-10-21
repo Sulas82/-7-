@@ -67,3 +67,4 @@ static void Main()
         Console.WriteLine(Average(C));
     }
 }
+
