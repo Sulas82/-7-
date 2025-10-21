@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "H:\\Умидаев Эмиль\\Практика\\Работа 7\\ConsoleApp1\\ConsoleApp1\\ConsoleApp1.csproj": {}
+    "H:\\Умидаев Эмиль\\Практика\\Работа 3\\ConsoleApp1\\ConsoleApp1\\ConsoleApp1.csproj": {}
   },
   "projects": {
-    "H:\\Умидаев Эмиль\\Практика\\Работа 7\\ConsoleApp1\\ConsoleApp1\\ConsoleApp1.csproj": {
+    "H:\\Умидаев Эмиль\\Практика\\Работа 3\\ConsoleApp1\\ConsoleApp1\\ConsoleApp1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "H:\\Умидаев Эмиль\\Практика\\Работа 7\\ConsoleApp1\\ConsoleApp1\\ConsoleApp1.csproj",
+        "projectUniqueName": "H:\\Умидаев Эмиль\\Практика\\Работа 3\\ConsoleApp1\\ConsoleApp1\\ConsoleApp1.csproj",
         "projectName": "ConsoleApp1",
-        "projectPath": "H:\\Умидаев Эмиль\\Практика\\Работа 7\\ConsoleApp1\\ConsoleApp1\\ConsoleApp1.csproj",
+        "projectPath": "H:\\Умидаев Эмиль\\Практика\\Работа 3\\ConsoleApp1\\ConsoleApp1\\ConsoleApp1.csproj",
         "packagesPath": "C:\\Users\\242909071095-28\\.nuget\\packages\\",
-        "outputPath": "H:\\Умидаев Эмиль\\Практика\\Работа 7\\ConsoleApp1\\ConsoleApp1\\obj\\",
+        "outputPath": "H:\\Умидаев Эмиль\\Практика\\Работа 3\\ConsoleApp1\\ConsoleApp1\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

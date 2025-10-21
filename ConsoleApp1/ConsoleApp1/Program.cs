@@ -1,85 +1,53 @@
-using System;
-using System.Diagnostics.Metrics;
-static double Average(int[] arr)
+﻿using System;
+
+class Program
 {
-    int sum = 0;
-    for (int i = 0; i < arr.Length; i++)
+    static void Main()
     {
-        sum += arr[i];
-    }
-    return sum /= arr.Length;
-}
+        Console.WriteLine("Программа для вычисления площади треугольника по трем сторонам");
 
-static int[] Arrays(int[] arr, string name)
-{
-    Random rnd = new Random();
-    Console.WriteLine($"Массив {name}:");
-    for (int i = 0; i <= arr.Length - 1; ++i)
-    {
-        arr[i] = rnd.Next(-100, 300);
-        Console.Write($" {arr[i]}");
-    }
-    Console.WriteLine();
-    int[] result = new int[arr.Length];
-    return result;
-}
-
-static void Main()
-{
-    string name;
-    Console.Write("Введите название массива: ");
-    name = Console.ReadLine();
-    Console.Write("Введите размер массива: ");
-    int countA = int.Parse(Console.ReadLine());
-    int[] A = new int[countA];
-    Arrays(A, name);
-    Console.Write($"Среднее арифметическое массива{name}: ");
-    Console.WriteLine(Average(A));
-
-    Console.Write("Введите название массива: ");
-    name = Console.ReadLine();
-    Console.Write("Введите размер массива: ");
-    int countB = int.Parse(Console.ReadLine());
-    int[] B = new int[countB];
-    Arrays(B, name);
-    Console.Write($"Среднее арифметическое массива{name}: ");
-    Console.WriteLine(Average(B));
-
-    int[] C = new int[countA + countB];
-
-    Console.WriteLine("Положительный массив С:");
-    int count = 0;
-    for (int i = 0; i <= A.Length - 1; ++i)
-    {
-        if (A[i] > 0)
+        try
         {
-            C[count] = A[i];
-            count++;
+            Console.WriteLine("Введите длину первой стороны:");
+            double a = GetPositiveNumber();
+
+            Console.WriteLine("Введите длину второй стороны:");
+            double b = GetPositiveNumber();
+
+            Console.WriteLine("Введите длину третьей стороны:");
+            double c = GetPositiveNumber();
+
+            double area = CalculateTriangleArea(a, b, c);
+            Console.WriteLine($"Площадь треугольника: {area}");
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Произошла ошибка: {ex.Message}");
+        }
+
+    }
+
+    static double CalculateTriangleArea(double a, double b, double c)
+    {
+        try
+        {
+            if (a + b <= c || a + c <= b || b + c <= a)
+            {
+                throw new ArgumentException("Треугольник с такими сторонами не существует");
+            }
+
+            double p = (a + b + c) / 2;
+            double area = Math.Sqrt(p * (p - a) * (p - b) * (p - c));
+
+            return area;
+        }
+        catch (ArgumentException ex)
+        {
+            throw new ArgumentException($"Ошибка при вычислении площади: {ex.Message}");
+        }
+        catch (Exception ex)
+        {
+            throw new Exception($"Математическая ошибка: {ex.Message}");
         }
     }
-    for (int j = 0; j <= B.Length - 1; ++j)
-    {
-        if (B[j] > 0)
-        {
-            C[count] = B[j];
-            count++;
-        }
-    }
-    if (count == 0)
-    {
-        Console.WriteLine("Массив C пуст");
-    }
-    else
-    {
-        Console.Write("Массив С:");
-        for (int i = 0; i < count; ++i)
-        {
-            Console.Write($" {C[i]}");
-        }
-        Array.Resize(ref C, count);
-        Console.Write("Среднее арифметическое массива C: ");
-        Console.WriteLine(Average(C));
-    }
 }
-
-
